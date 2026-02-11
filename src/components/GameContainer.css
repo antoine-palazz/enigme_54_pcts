@@ -1,0 +1,153 @@
+/* ── Game Container ───────────────────────────────────────── */
+
+.game-container {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-parchment-dark);
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.game-container__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--color-parchment-dark);
+}
+
+.game-container__icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-parchment);
+}
+
+.game-container__title {
+  font-size: 1.3rem;
+  margin-bottom: 0.1rem;
+}
+
+.game-container__description {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.game-container__body {
+  padding: 1.5rem;
+}
+
+/* ── Locked ──────────────────────────────────────────────── */
+
+.game-container--locked {
+  opacity: 0.5;
+  filter: grayscale(0.5);
+}
+
+.game-container--locked .game-container__icon {
+  font-size: 1.3rem;
+}
+
+.game-container__locked-text {
+  padding: 1rem 1.5rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+/* ── Completed ───────────────────────────────────────────── */
+
+.game-container--completed {
+  border-color: var(--color-green);
+  background: linear-gradient(135deg, var(--color-white) 0%, #f0f8e8 100%);
+}
+
+.game-container--completed .game-container__icon {
+  background: var(--color-green);
+  color: white;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.game-container__completed-text {
+  padding: 0.75rem 1.5rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--color-green);
+  font-weight: 600;
+}
+
+/* ── Active ──────────────────────────────────────────────── */
+
+.game-container--active {
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 24px var(--color-shadow);
+}
+
+.game-container--active .game-container__icon {
+  background: var(--color-gold);
+  color: var(--color-brown);
+}
+
+/* ── Shared Game Styles ──────────────────────────────────── */
+
+.game-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  background: var(--color-brown);
+  transition: all var(--transition);
+}
+
+.game-btn:hover {
+  background: var(--color-brown-light);
+  transform: translateY(-1px);
+}
+
+.game-btn:active {
+  transform: translateY(0);
+}
+
+.game-btn--gold {
+  background: var(--color-gold);
+  color: var(--color-brown);
+}
+
+.game-btn--gold:hover {
+  background: var(--color-gold-light);
+}
+
+.game-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--color-parchment-dark);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background: var(--color-white);
+  color: var(--color-text);
+  transition: border-color var(--transition);
+}
+
+.game-input:focus {
+  border-color: var(--color-gold);
+}
+
+.game-success {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--color-green);
+  font-weight: 600;
+  font-size: 1.1rem;
+  animation: fadeIn 0.5s ease;
+}

@@ -1,0 +1,179 @@
+/* ── Cipher Game ─────────────────────────────────────────── */
+
+.cipher {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.cipher__instruction {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.cipher__meta {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-style: italic;
+}
+
+.cipher__label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  margin-bottom: 0.4rem;
+}
+
+.cipher__text {
+  display: block;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.05rem;
+  background: var(--color-parchment);
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius);
+  letter-spacing: 2px;
+  word-break: break-all;
+  border: 2px solid var(--color-parchment-dark);
+  transition: all var(--transition);
+}
+
+.cipher__text--result {
+  background: rgba(201, 168, 76, 0.1);
+  border-color: var(--color-gold);
+}
+
+.cipher__text--correct {
+  background: rgba(45, 80, 22, 0.1);
+  border-color: var(--color-green);
+  color: var(--color-green);
+}
+
+/* ── Answer input ────────────────────────────────────────── */
+
+.cipher__answer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cipher__help {
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+}
+
+.cipher__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cipher__tries {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+.cipher__reveal {
+  margin-top: 0.5rem;
+}
+
+/* ── Slider Controls ─────────────────────────────────────── */
+
+.cipher__controls {
+  padding: 0.5rem 0;
+}
+
+.cipher__slider-label {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cipher__slider {
+  width: 100%;
+  height: 8px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--color-parchment-dark);
+  border-radius: 4px;
+  outline: none;
+}
+
+.cipher__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-brown);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.cipher__slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.cipher__slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-brown);
+  cursor: pointer;
+}
+
+.cipher__slider-range {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: var(--color-text-light);
+  margin-top: 0.25rem;
+}
+
+/* ── Alphabet Wheel ──────────────────────────────────────── */
+
+.cipher__wheel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  justify-content: center;
+  padding: 0.75rem;
+  background: var(--color-parchment);
+  border-radius: var(--radius);
+}
+
+.cipher__wheel-letter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.7rem;
+  width: 28px;
+  gap: 1px;
+}
+
+.cipher__wheel-original {
+  font-weight: 700;
+  color: var(--color-brown);
+}
+
+.cipher__wheel-arrow {
+  font-size: 0.55rem;
+  color: var(--color-text-light);
+}
+
+.cipher__wheel-shifted {
+  color: var(--color-gold);
+  font-weight: 700;
+}
+
+/* ── Action ──────────────────────────────────────────────── */
+
+/* (moved above under .cipher__answer) */

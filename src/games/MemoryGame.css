@@ -1,0 +1,97 @@
+/* ── Memory Game ─────────────────────────────────────────── */
+
+.memory {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.memory__stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.memory__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  max-width: 540px;
+  width: min(540px, 100%);
+  margin: 0 auto;
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+
+.memory__card {
+  aspect-ratio: 1;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  perspective: 600px;
+}
+
+.memory__card-front,
+.memory__card-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  backface-visibility: hidden;
+  transition: transform 0.5s ease;
+  font-size: 2.2rem;
+}
+
+.memory__card-front {
+  background: linear-gradient(135deg, var(--color-brown) 0%, #7a5438 100%);
+  color: var(--color-gold);
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  border: 2px solid var(--color-gold);
+  transform: rotateY(0deg);
+}
+
+@media (max-width: 480px) {
+  .memory__grid {
+    gap: 0.55rem;
+    max-width: 420px;
+  }
+
+  .memory__card-front,
+  .memory__card-back {
+    font-size: 1.9rem;
+  }
+
+  .memory__card-front {
+    font-size: 1.5rem;
+  }
+}
+
+.memory__card-back {
+  background: var(--color-parchment);
+  border: 2px solid var(--color-gold);
+  transform: rotateY(180deg);
+}
+
+.memory__card--flipped .memory__card-front {
+  transform: rotateY(-180deg);
+}
+
+.memory__card--flipped .memory__card-back {
+  transform: rotateY(0deg);
+}
+
+.memory__card--matched .memory__card-back {
+  background: rgba(45, 80, 22, 0.12);
+  border-color: var(--color-green);
+}
+
+.memory__card:hover:not(.memory__card--flipped):not(.memory__card--matched) .memory__card-front {
+  border-color: var(--color-gold-light);
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.3);
+}

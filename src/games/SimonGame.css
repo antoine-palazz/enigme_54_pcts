@@ -1,0 +1,90 @@
+/* ── Simon Game ──────────────────────────────────────────── */
+
+.simon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.simon__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.simon__fail {
+  color: var(--color-red-light);
+  font-weight: 600;
+  animation: shake 0.4s ease;
+}
+
+.simon__hint {
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+/* ── Board ───────────────────────────────────────────────── */
+
+.simon__board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 220px;
+  height: 220px;
+}
+
+.simon__btn {
+  border-radius: var(--radius-lg);
+  border: 3px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  opacity: 0.65;
+}
+
+.simon__btn:disabled {
+  cursor: not-allowed;
+}
+
+.simon__btn--active {
+  opacity: 1 !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px currentColor;
+}
+
+.simon__btn--red {
+  background: #c0392b;
+  color: #c0392b;
+}
+
+.simon__btn--blue {
+  background: #2980b9;
+  color: #2980b9;
+}
+
+.simon__btn--green {
+  background: #27ae60;
+  color: #27ae60;
+}
+
+.simon__btn--yellow {
+  background: #f1c40f;
+  color: #f1c40f;
+}
+
+.simon__btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.simon__btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+/* Rounded corners for diamond shape */
+.simon__btn--red { border-radius: var(--radius-lg) 4px 4px 4px; }
+.simon__btn--blue { border-radius: 4px var(--radius-lg) 4px 4px; }
+.simon__btn--green { border-radius: 4px 4px 4px var(--radius-lg); }
+.simon__btn--yellow { border-radius: 4px 4px var(--radius-lg) 4px; }

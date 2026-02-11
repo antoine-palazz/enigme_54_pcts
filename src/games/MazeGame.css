@@ -1,0 +1,74 @@
+/* ── Maze Game ───────────────────────────────────────────── */
+
+.maze {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.maze__stats {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+}
+
+.maze__canvas-wrapper {
+  border: 3px solid var(--color-brown);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 16px var(--color-shadow);
+  touch-action: none;
+}
+
+.maze__canvas {
+  display: block;
+}
+
+/* ── D-pad Controls ──────────────────────────────────────── */
+
+.maze__controls {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .maze__controls {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.maze__dpad {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.maze__dpad-row {
+  display: flex;
+  gap: 4px;
+}
+
+.maze__dpad-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius);
+  background: var(--color-brown);
+  color: var(--color-parchment);
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-gold);
+}
+
+.maze__dpad-btn:active {
+  background: var(--color-gold);
+  color: var(--color-brown);
+}
+
+.maze__tip {
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  text-align: center;
+}
