@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import './FinalClue.css';
 
 /* Obfuscated URL split across constants to deter casual source inspection */
-const _A = atob('d3d3');      // www
-const _B = atob('LmFiYw==');  // .abc
-const _C = atob('LmNvbQ=='); // .com
+const _A = atob('ZG9jcy5nb29nbGUuY29t'); // docs.google.com
+const _B = atob('L2RvY3VtZW50L2Qv'); // /document/d/
+const _C = atob('MWJNaXZDaVQwbUNmX2ZFZ0JCN2QxZ2txZ0xLQlFzSi0tYnJibnFEN19LYWs='); // 1bMivCiT0mCf_fEgBB7d1gkqgLKBQsJ--brbnqD7_Kak
+const _D = atob('L2VkaXQ/dXNwPXNoYXJpbmc='); // /edit?usp=sharing
 function getClueUrl() {
-  return `${_A}${_B}${_C}`;
+  return `${_A}${_B}${_C}${_D}`;
 }
 
 function Confetti() {
@@ -50,6 +51,7 @@ export default function FinalClue() {
   }, []);
 
   const url = getClueUrl();
+  const fullUrl = `https://${url}`;
 
   return (
     <div className="final-clue">
@@ -64,12 +66,12 @@ export default function FinalClue() {
           </p>
           <a
             ref={urlRef}
-            href={`https://${url}`}
+            href={fullUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="final-clue__url"
           >
-            {url}
+            {fullUrl}
           </a>
           <p className="final-clue__hint">
             Notez bien cet indice avant de continuer votre quête !
